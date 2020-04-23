@@ -7,6 +7,73 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Click="Button_Click" Width="50" Margin="2 0 2 0">Graf</Button>
+            <Button Click="Button_Click_1" Width="50" Margin="2 0 2 0">Tabela</Button>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0">
+                    
+                    <Button DockPanel.Dock="Left" Width="20" FontSize="40">↓</Button>
+                    <TextBox DockPanel.Dock="Top"></TextBox>
+                    <ScrollViewer>
+                        <TreeView>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                        </TreeView>
+                    </ScrollViewer>
+                </DockPanel>
+                <DockPanel Grid.Row="1">
+                    <Button DockPanel.Dock="Left" Width="20" FontSize="40">↑</Button>
+                    <ScrollViewer>
+                        <TreeView>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                            <TreeViewItem Header="Grad"/>
+                        </TreeView>
+                    </ScrollViewer>
+                </DockPanel>
+            </Grid>
+        </Grid>
+        <Frame Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
