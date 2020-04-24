@@ -20,24 +20,35 @@ namespace HappyWeather
     /// </summary>
     public partial class MainWindow : Window
     {
-        object graphPage;
-        object tablePage;
         public MainWindow()
         {
             InitializeComponent();
-            graphPage = new GraphPage();
-            tablePage = new TablePage();
-            MainFrame.Content = graphPage;
+            List<VremePodatak> vremena = new List<VremePodatak>();
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            vremena.Add(new VremePodatak { VremeMerenja = new DateTime(), Temperatura = 10, VazdusniPritisak = 11, Vidljivost = 12, Vlaznost = 13 });
+            MainDataGrid.ItemsSource = vremena;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = graphPage;
+            MainCartesionChart.Visibility = Visibility.Visible;
+            ChoicesStackPanel.Visibility = Visibility.Visible;
+            MainDataGrid.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = tablePage;
+            MainCartesionChart.Visibility = Visibility.Hidden;
+            ChoicesStackPanel.Visibility = Visibility.Hidden;
+            MainDataGrid.Visibility = Visibility.Visible;
         }
     }
 

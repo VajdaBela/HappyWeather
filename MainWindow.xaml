@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HappyWeather"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -20,60 +21,63 @@
                 <ColumnDefinition Width="7*"></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <lvc:CartesianChart x:Name="MainCartesionChart" Grid.Column="0" Margin="10" DisableAnimations="True">
+                <lvc:CartesianChart.Series>
+                    <lvc:LineSeries Values="1,2,1"/>
+                </lvc:CartesianChart.Series>
+            </lvc:CartesianChart>
+            <DataGrid x:Name="MainDataGrid" Grid.Column="0" Margin="10" Visibility="Hidden" >
+            </DataGrid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <DockPanel Grid.Row="0">
-                    
-                    <Button DockPanel.Dock="Left" Width="20" FontSize="40">↓</Button>
-                    <TextBox DockPanel.Dock="Top"></TextBox>
+                <DockPanel Grid.Row="0" Margin="0 0 0 10">
+
+                    <Button DockPanel.Dock="Left" Width="20" Height="60" FontSize="40">↓</Button>
+                    <TextBox DockPanel.Dock="Top" Margin="0 0 18 10"></TextBox>
                     <ScrollViewer>
                         <TreeView>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
                             <TreeViewItem Header="Grad"/>
                             <TreeViewItem Header="Grad"/>
                         </TreeView>
                     </ScrollViewer>
                 </DockPanel>
                 <DockPanel Grid.Row="1">
-                    <Button DockPanel.Dock="Left" Width="20" FontSize="40">↑</Button>
+                    <Grid DockPanel.Dock="Bottom" Margin="0 10 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="0 0 5 0">
+                            <TextBlock>Od:</TextBlock>
+                            <DatePicker ></DatePicker>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5 0 0 0">
+                            <TextBlock>Do:</TextBlock>
+                            <DatePicker ></DatePicker>
+                        </StackPanel>
+                    </Grid>
+                    <Button DockPanel.Dock="Left" Width="20" Height="60" FontSize="40">↑</Button>
                     <ScrollViewer>
                         <TreeView>
                             <TreeViewItem Header="Grad"/>
                             <TreeViewItem Header="Grad"/>
                             <TreeViewItem Header="Grad"/>
                             <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
-                            <TreeViewItem Header="Grad"/>
                         </TreeView>
                     </ScrollViewer>
+
                 </DockPanel>
+                <StackPanel x:Name="ChoicesStackPanel" Grid.Row="2" Margin="10 0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <RadioButton Margin="0 2">temperatura</RadioButton>
+                    <RadioButton Margin="0 2">vazdusni pritisak</RadioButton>
+                    <RadioButton Margin="0 2">vidljivost</RadioButton>
+                    <RadioButton Margin="0 2">vlaznost vazduha</RadioButton>
+                </StackPanel>
             </Grid>
         </Grid>
-        <Frame Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
